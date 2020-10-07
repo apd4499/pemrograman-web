@@ -16,6 +16,9 @@ if (isset($_POST['submit']) ){
     //cookie
     //setcookie(key, nilai, expire)
     setcookie('nama_user', $_POST['nama'], time()+120);
+    
+    //session
+    $_SESSION['nama_user'] = $_POST['nama'];
 
     header('Location: profile.php');
 

@@ -13,12 +13,16 @@ if (isset($_POST['submit']) ){
     if( $_POST['nama'] == $user && 
     $_POST['password'] == $password){
 
-        header('Location: profile.php?nama=' . $user);
+    //cookie
+    //setcookie(key, nilai, expire)
+    setcookie('nama_user', $_POST['nama'], time()+120);
+
+    header('Location: profile.php');
 
     }else{
         echo 'login gagal!';
     }
-    
+
 }
 
 ?>

@@ -6,9 +6,19 @@
 // if (isset($_GET)['submit]) ){
 //  echo $_GET['password'];
 //}
+$user = 'alif';
+$password = '123';
 
 if (isset($_POST['submit']) ){
-    echo $_POST['password'];
+    if( $_POST['nama'] == $user && 
+    $_POST['password'] == $password){
+
+        header('Location: profile.php?nama=' . $user);
+
+    }else{
+        echo 'login gagal!';
+    }
+    
 }
 
 ?>

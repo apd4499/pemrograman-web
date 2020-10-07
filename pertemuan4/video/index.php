@@ -3,7 +3,13 @@
 //------GET Dan POST------
 //------------------------
 
-echo $_GET['password']
+// if (isset($_GET)['submit]) ){
+//  echo $_GET['password'];
+//}
+
+if (isset($_POST['submit']) ){
+    echo $_POST['password'];
+}
 
 ?>
 

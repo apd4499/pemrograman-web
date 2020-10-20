@@ -1,10 +1,10 @@
 <?php
-$namaServer =  "localhost";
+$namaServer = "localhost";
 $username = "root";
 $password = "";
-$namaDB =  "weblanjut";
+$namaDB = "weblanjut";
 
-//Membuat koneksi
+//Membuat Koneksi
 $conn = mysqli_connect($namaServer, $username, $password, $namaDB);
 //check koneksi
 if (!$conn) {

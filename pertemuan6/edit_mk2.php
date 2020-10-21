@@ -13,17 +13,17 @@
     include_once "header.php";
     include_once "koneksi.php"; 
     $status = 2;  
-    if (isset($_POST['kode'])) {
+    if (isset($_POST['kodemk'])) {
         
-        $kode = $_POST['kode'];
-        $nama = $_POST['nama'];
+        $kodemk = $_POST['kodemk'];
+        $namamk = $_POST['namamk'];
         $kategori = $_POST['kategori'];
         $sks = $_POST['sks']; 
 
          //buat koneksi
-         $strsql = "INSERT INTO matakuliah (kode, nama, kategori, sks) 
-         VALUES ('$kode','$nama','$kategori','$sks')";
-            
+         $strsql = "INSERT INTO matakuliah (kodemk, namamk, kategori, sks) 
+         VALUES ('$kodemk','$namamk','$kategori','$sks')";
+         
          $runSQL = mysqli_query($conn,$strsql);        
          if ($runSQL) {
              $status = 1; //sukses
@@ -32,14 +32,14 @@
              $status = 0; //tidak sukses;
          }       
     }        
-    else if (isset($_GET['kode'])) {
-        $_kode = $_GET['kode'];
-        $strSQL = "SELECT * FROM matakuliah WHERE kode='".$_kode."'";
+    else if (isset($_GET['kodemk'])) {
+        $_kodemk = $_GET['kodemk'];
+        $strSQL = "SELECT * FROM matakuliah WHERE kodemk='".$_kodemk."'";
         $runStrSQL = mysqli_query($conn,$strSQL);
         $jmlRowData = mysqli_num_rows($runStrSQL);
         if ($jmlRowData > 0) {
             while ($row = mysqli_fetch_assoc($runStrSQL)) {
-                $_nama = $row["nama"];
+                $_namamk = $row["namamk"];
                 $_kategori = $row["kategori"];
                 $_sks = $row["sks"];
             }
@@ -47,10 +47,10 @@
     }  
     else {
         $jngiseng = "disabled";
-        $_nama = "";
+        $_namamk = "";
         $_kategori = "";
         $_sks = "";
-        $_kode = "";
+        $_kodemk = "";
     }  
     ?>
     <div class="container">
@@ -70,19 +70,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6"><b>Kode Mata Kuliah</b></div>
-                                <div class="col-6"><span id="kode"></span></div>
+                                <div class="col-6"><span id="kdmk"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-6"><b>Mata Kuliah</b></div>
-                                <div class="col-6"><span id="nama"></span></div>
+                                <div class="col-6"><span id="nmmk"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-6"><b>Kategori</b></div>
-                                <div class="col-6"><span id="kategori"></span></div>
+                                <div class="col-6"><span id="kat"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-6"><b>SKS</b></div>
-                                <div class="col-6"><span id="sks"></span> sks</div>
+                                <div class="col-6"><span id="sksmk"></span> sks</div>
                             </div>
                         </div>
                     </div>
@@ -119,11 +119,11 @@
         <form id="myform" method="post" action="registrasi_mk2.php">
             <div class="form-group">
                 <label>Kode Mata Kuliah</label>
-                <input id="kode" class="form-control" type="text" name="kode" value="<?php echo $_kode ?>" readonly <?php echo $jngiseng ?>>
+                <input id="kodemk" class="form-control" type="text" name="kodemk" value="<?php echo $_kodemk ?>" readonly <?php echo $jngiseng ?>>
             </div>
             <div class="form-group">
                 <label>Nama Mata Kuliah</label>
-                <input id="nama" class="form-control" type="text" name="nama" value="<?php echo $_nama ?>" <?php echo $jngiseng ?>>
+                <input id="namamk" class="form-control" type="text" name="namamk" value="<?php echo $_namamk ?>" <?php echo $jngiseng ?>>
             </div>
             <div class="form-group">
                 <label>Kategori Mata Kuliah</label>
@@ -156,15 +156,15 @@
         });
         $('#tombol').click(function(){
             //ambil data dari form
-            const kode = $('#kode').val();
-            const nama = $('#nama').val();
+            const kodemk = $('#kodemk').val();
+            const namamk = $('#namamk').val();
             const kategori = $('#kategori').val();
             const sks = $('#sks').val();
 
-            $('#kode').text(kode);
-            $('#nama').text(nama);
-            $('#kategori').text(kategori);
-            $('#sks').text(sks);
+            $('#kdmk').text(kodemk);
+            $('#nmmk').text(namamk);
+            $('#kat').text(kategori);
+            $('#sksmk').text(sks);
          
             //buka modal
             $('#pesan').modal({

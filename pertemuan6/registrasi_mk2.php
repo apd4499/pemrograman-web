@@ -9,19 +9,19 @@
     
 </head>
 <body>
-    <?php
-    include_once "header.php";   
+    <?php   
+    include_once "header.php";
     $status = 2;  
-    if (isset($_POST['kode'])) {
+    if (isset($_POST['kodemk'])) {
         include_once "koneksi.php"; 
-        $kode = $_POST['kode'];
-        $nama = $_POST['nama'];
+        $kodemk = $_POST['kodemk'];
+        $namamk = $_POST['namamk'];
         $kategori = $_POST['kategori'];
         $sks = $_POST['sks']; 
 
          //buat koneksi
-         $strsql = "INSERT INTO matakuliah (kode, nama, kategori, sks) 
-         VALUES ('$kode','$nama','$kategori','$sks')";
+         $strsql = "INSERT INTO matakuliah (kodemk, namamk, kategori, sks) 
+         VALUES ('$kodemk','$namamk','$kategori','$sks')";
          
          $runSQL = mysqli_query($conn,$strsql);        
          if ($runSQL) {
@@ -49,19 +49,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6"><b>Kode Mata Kuliah</b></div>
-                                <div class="col-6"><span id="kode"></span></div>
+                                <div class="col-6"><span id="kdmk"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-6"><b>Mata Kuliah</b></div>
-                                <div class="col-6"><span id="nama"></span></div>
+                                <div class="col-6"><span id="nmmk"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-6"><b>Kategori</b></div>
-                                <div class="col-6"><span id="kategori"></span></div>
+                                <div class="col-6"><span id="kat"></span></div>
                             </div>
                             <div class="row">
                                 <div class="col-6"><b>SKS</b></div>
-                                <div class="col-6"><span id="sks"></span>sks</div>
+                                <div class="col-6"><span id="sksmk"></span> sks</div>
                             </div>
                         </div>
                     </div>
@@ -98,11 +98,11 @@
         <form id="myform" method="post" action="registrasi_mk2.php">
             <div class="form-group">
                 <label>Kode Mata Kuliah</label>
-                <input id="kode" class="form-control" type="text" name="kode">
+                <input id="kodemk" class="form-control" type="text" name="kodemk">
             </div>
             <div class="form-group">
                 <label>Nama Mata Kuliah</label>
-                <input id="nama" class="form-control" type="text" name="nama">
+                <input id="namamk" class="form-control" type="text" name="namamk">
             </div>
             <div class="form-group">
                 <label>Kategori Mata Kuliah</label>
@@ -121,7 +121,7 @@
         </form>
         
     </div>
-    <?php
+    <?php 
     include_once "footer.php";
     ?>
     <!-- JS, Popper.js, and jQuery -->
@@ -135,15 +135,15 @@
         });
         $('#tombol').click(function(){
             //ambil data dari form
-            const kode = $('#kode').val();
-            const nama = $('#nama').val();
+            const kodemk = $('#kodemk').val();
+            const namamk = $('#namamk').val();
             const kategori = $('#kategori').val();
             const sks = $('#sks').val();
 
-            $('#kode').text(kode);
-            $('#nama').text(nama);
-            $('#kategori').text(kategori);
-            $('#sks').text(sks);
+            $('#kdmk').text(kodemk);
+            $('#nmmk').text(namamk);
+            $('#kat').text(kategori);
+            $('#sksmk').text(sks);
          
             //buka modal
             $('#pesan').modal({

@@ -15,7 +15,7 @@
         $prodi = $_POST['prodi'];
         $password = $_POST['password'];
     
-        $sql = "INSERT INTO user_akses (nim, nama, prodi, password)
+        $sql = "INSERT INTO aksesdatatable (nim, nama, prodi, password)
         VALUES ('$nim','$nama','$prodi','$password')";
 
         if(mysqli_query($conn, $sql)){

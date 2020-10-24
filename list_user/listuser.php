@@ -44,7 +44,7 @@
           <tbody>
     <?php
     //buat sql
-    $strSQL = "SELECT * FROM user_akses";
+    $strSQL = "SELECT * FROM aksesdatatable";
     $runStrSQL = mysqli_query($conn,$strSQL);
     $jmlRowData = mysqli_num_rows($runStrSQL);
     if ($jmlRowData < 0){

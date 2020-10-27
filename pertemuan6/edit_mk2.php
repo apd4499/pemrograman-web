@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Matkul</title>
+    <title>Edit Mata Kuliah</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 
@@ -105,12 +105,8 @@
                         <label for="sks">SKS</label>
                         <input id="sks" type="number" name="sks" class="form-control" placeholder="Satuan Kredit Semester" value="<?php echo $row['sks'] ?>">
                     </div>
-                    <button type="button" id="tombol" class="btn btn-success btn-block"> Save
+                    <button type="button" id="tombol" class="btn btn-primary btn-block"> Simpan
                     </button>
-                    </input>
-                    <br>
-                    <a class="btn btn-danger btn-block" href="listmatakuliah.php"> Cancel</a>
-                    <br>
                 </fieldset>
 
 

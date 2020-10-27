@@ -117,7 +117,7 @@
                 <label>SKS</label>
                 <input id="sks" class="form-control" type="text" name="sks">
             </div>           
-                <input class="btn btn-primary" type="button" id="tombol" value="Simpan">   
+            <button type="button" id="tombol" class="btn btn-primary btn-block"> Simpan </button>   
         </form>
         
     </div>

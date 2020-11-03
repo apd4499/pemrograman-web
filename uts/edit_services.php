@@ -20,12 +20,12 @@
 
         $nama = $_POST['nama'];
         $keahlian = $_POST['keahlian'];
-
+        $id = $_POST["id"];
          //buat koneksi
          $strSQL = "UPDATE services SET 
-         nama='".$nama."', 
-         keahlian='".$keahlian."',
-         WHERE id='".$id."'";
+         nama='$nama', 
+         keahlian='$keahlian'
+         WHERE id='$id'";
         // echo $strSQL;
        // die;
          $runSQL = mysqli_query($conn,$strSQL);        
@@ -39,7 +39,7 @@
     }        
     else if (isset($_GET['id'])) {
         $id = $_GET['id'];
-        $strSQL = "SELECT * FROM services WHERE id='".$id."'";
+        $strSQL = "SELECT * FROM services WHERE id=$id";
         $runStrSQL = mysqli_query($conn,$strSQL);
         $jmlRowData = mysqli_num_rows($runStrSQL);
         if ($jmlRowData > 0) {
@@ -58,7 +58,6 @@
     ?>
     <div class="container">
         <h2>Edit Services</h2>   
-
         <?php 
         include "modalservices.php";
             if ($status == 1) {
@@ -79,7 +78,7 @@
             }
         
         ?>
-        <form id="myform" method="post" action="edit_services.php">
+        <form id="myform" method="POST" action="edit_services.php">
             <div class="form-group">
                 <label>id</label>
                 <input id="id" class="form-control" type="text" name="id" value="<?php echo $id?>">
@@ -92,7 +91,7 @@
                 <label>keahlian</label>
                 <input id="keahlian" class="form-control" type="text" name="keahlian" value="<?php echo $keahlian?>">
             </div>            
-                <input class="btn btn-dark" type="button" id="tombol" value="Simpan">   
+                <input class="btn btn-dark" type="submit" id="tombol" value="Simpan">   
                 <a href="services.php" class="btn btn-danger">Kembali</a>
         </form>
         
@@ -128,11 +127,7 @@
             $('#id').text(id);
             $('#nama').text(nama);
             $('#keahlian').text(keahlian);
-         
-            //buka modal
-            $('#pesan').modal({
-                show: true
-            });
+        
         });
     });
 </script>

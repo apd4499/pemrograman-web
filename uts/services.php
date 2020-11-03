@@ -96,7 +96,7 @@ Author URL: http://w3layouts.com
       <!-- Isi Service !-->
         <section class="w3-services">
          <div class="container py-md-3">
-         <h5><?php echo $row["id"]?> <?php echo $row["nama"]?></h5>
+         <h5><?php echo $row["id"]?>. <?php echo $row["nama"]?></h5>
           <p> <?php echo $row["keahlian"]?> </p>    
     </div>
       <?php

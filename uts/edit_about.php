@@ -16,7 +16,7 @@
     <?php   
     include_once "koneksi.php"; 
     $status = 2;  
-    if (isset($_POST['id'])) {
+    if (isset($_POST["id"])) {
 
         $id = $_POST['id']; 
         $gambar = $_POST['gambar'];
@@ -25,9 +25,9 @@
 
          //buat koneksi
          $strSQL = "UPDATE about SET 
-         gambar='".$gambar."', 
-         judul='".$judul."',
-         isi='".$isi."' WHERE id='".$id."'";
+         gambar='$gambar', 
+         judul='$judul',
+         isi='$isi' WHERE id='$id'";
         // echo $strSQL;
        // die;
          $runSQL = mysqli_query($conn,$strSQL);        
@@ -39,16 +39,16 @@
          }      
          header("refresh:3; url=about.php"); 
     }        
-    else if (isset($_GET['id'])) {
+    else if (isset($_GET["id"])) {
         $id = $_GET['id'];
-        $strSQL = "SELECT * FROM about WHERE id='".$id."'";
-        $runStrSQL = mysqli_query($conn,$strSQL);
-        $jmlRowData = mysqli_num_rows($runStrSQL);
+        $strSQL = "SELECT * FROM about WHERE id=$id";
+        $runStrSQLupdate = mysqli_query($conn,$strSQL);
+        $jmlRowData = mysqli_num_rows($runStrSQLupdate);
         if ($jmlRowData > 0) {
-            while ($row = mysqli_fetch_assoc($runStrSQL)) {
-                $gambar = $row["gambar"];
-                $judul = $row["judul"];
-                $isi = $row["isi"];
+            while ($row = mysqli_fetch_assoc($runStrSQLupdate)) {
+                $gambar = $row['gambar'];
+                $judul = $row['judul'];
+                $isi = $row['isi'];
             }
         }
     }  
@@ -62,7 +62,6 @@
     ?>
     <div class="container">
         <h2>Edit About</h2>   
-
         <?php 
         include "modalabout.php";
             if ($status == 1) {
@@ -83,24 +82,24 @@
             }
         
         ?>
-        <form id="myform" method="post" action="edit_about.php">
+        <form id="myform" method="POST" action="edit_about.php">
             <div class="form-group">
                 <label>id</label>
                 <input id="id" class="form-control" type="text" name="id" value="<?php echo $id ?>">
             </div>
             <div class="form-group">
                 <label>gambar</label>
-                <input id="gambar" class="form-control" type="text" name="gambar" value="<?php echo $gambar?>">
+                <input class="form-control" type="text" name="gambar" value="<?php echo $gambar?>">
             </div>
             <div class="form-group">
                 <label>judul</label>
-                <input id="judul" class="form-control" type="text" name="judul" value="<?php echo $judul?>">
+                <input class="form-control" type="text" name="judul" value="<?php echo $judul?>">
             </div>  
             <div class="form-group">
                 <label>isi</label>
-                <input id="isi" class="form-control" type="text" name="isi" value="<?php echo $isi?>">
+                <input class="form-control" type="text" name="isi" value="<?php echo $isi?>">
             </div>             
-                <input class="btn btn-dark" type="button" id="tombol" value="Simpan">   
+                <input class="btn btn-dark" type="submit" id="tombol" value="Simpan">   
                 <a href="about.php" class="btn btn-danger">Kembali</a>
         </form>
         
@@ -122,28 +121,6 @@
       document.getElementById("movetop").style.display = "none";
     }
   } 
-    $(document).ready(function() {
-        $('#proses').click(function(){
-            $('#myform').submit();
-        });
-        $('#tombol').click(function(){
-            //ambil data dari form
-            const id = $('#id').val();
-            const gambar = $('#gambar').val();
-            const judul = $('#judul').val();
-            const isi = $('#isi').val();
-
-            $('#id').text(id);
-            $('#gbr').text(gambar);
-            $('#jdl').text(judul);
-            $('#isi').text(isi);
-         
-            //buka modal
-            $('#pesan').modal({
-                show: true
-            });
-        });
-    });
      // When the user clicks on the button, scroll to the top of the document
   function topFunction() {
     document.body.scrollTop = 0;

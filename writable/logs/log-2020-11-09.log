@@ -1,0 +1,6 @@
+CRITICAL - 2020-11-09 23:22:57 --> Too few arguments to function App\Controllers\Home::dashboard(), 1 passed in C:\laragon\www\belajar-ci\system\CodeIgniter.php on line 918 and exactly 2 expected
+#0 C:\laragon\www\belajar-ci\system\CodeIgniter.php(918): App\Controllers\Home->dashboard('10')
+#1 C:\laragon\www\belajar-ci\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#2 C:\laragon\www\belajar-ci\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\laragon\www\belajar-ci\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

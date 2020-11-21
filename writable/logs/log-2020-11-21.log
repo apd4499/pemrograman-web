@@ -1,0 +1,24 @@
+CRITICAL - 2020-11-21 00:11:49 --> Column 'name' cannot be null
+#0 C:\laragon\www\belajar-ci\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `us...')
+#1 C:\laragon\www\belajar-ci\system\Database\BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\belajar-ci\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\belajar-ci\system\Database\BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\belajar-ci\system\Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\belajar-ci\app\Controllers\Admin\Users.php(38): CodeIgniter\Model->insert(Array)
+#6 C:\laragon\www\belajar-ci\system\CodeIgniter.php(918): App\Controllers\Admin\Users->store()
+#7 C:\laragon\www\belajar-ci\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#8 C:\laragon\www\belajar-ci\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\belajar-ci\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2020-11-21 00:15:22 --> Column 'name' cannot be null
+#0 C:\laragon\www\belajar-ci\system\Database\MySQLi\Connection.php(331): mysqli->query('INSERT INTO `us...')
+#1 C:\laragon\www\belajar-ci\system\Database\BaseConnection.php(741): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\laragon\www\belajar-ci\system\Database\BaseConnection.php(669): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\laragon\www\belajar-ci\system\Database\BaseBuilder.php(2249): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\laragon\www\belajar-ci\system\Model.php(755): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\belajar-ci\app\Controllers\Admin\Users.php(38): CodeIgniter\Model->insert(Array)
+#6 C:\laragon\www\belajar-ci\system\CodeIgniter.php(918): App\Controllers\Admin\Users->store()
+#7 C:\laragon\www\belajar-ci\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Users))
+#8 C:\laragon\www\belajar-ci\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\belajar-ci\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 {main}
